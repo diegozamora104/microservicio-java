@@ -1,18 +1,14 @@
-name:  CI
+name: Continuous Integration
 
 on:
-
   push:
-
-  workflow_dispatch:
+    branches:
+      - 'feature/*'
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Run a multi-line script
-        run: |
-          echo "Hola mundo"
+    - name: Checkout Repository
+      uses: actions/checkout@v2
